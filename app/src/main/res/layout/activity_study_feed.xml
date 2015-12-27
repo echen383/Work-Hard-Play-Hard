@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.emily.whph2.StudyFeedActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <Button
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/workbtn"
+                android:text="WORK"
+                android:background="#2196F3" />
+            <Button
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/playbtn"
+                android:layout_toRightOf="@+id/workbtn"
+                android:text="PLAY" />
+            <ToggleButton
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/feedbtn"
+                android:textOn="TO MAP"
+                android:textOff="TO FEED"
+                android:checked="true"
+                android:layout_below="@+id/workbtn"
+                android:layout_centerHorizontal="true" />
+
+            <ImageButton
+                android:id="@+id/newpostbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_alignBottom="@+id/feedbtn"
+                android:layout_alignEnd="@+id/playbtn"
+                android:src="@android:drawable/ic_menu_edit" />
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_study_feed" />
+
+</android.support.design.widget.CoordinatorLayout>
