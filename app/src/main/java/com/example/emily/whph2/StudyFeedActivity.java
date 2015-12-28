@@ -42,10 +42,6 @@ public class StudyFeedActivity extends AppCompatActivity {
 
         sbObjList.remove(0);
 
-        //*************
-        //ONLY DISPLAYING ONE STUDY BUDDY ITME
-        //*************
-
         btnCreateEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

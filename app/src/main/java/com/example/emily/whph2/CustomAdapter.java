@@ -20,9 +20,7 @@ public class CustomAdapter extends BaseAdapter {
     public CustomAdapter(Activity context, List<StudyBuddy> studyBuddies) {
         this.context = context;
         this.studyBuddies = studyBuddies;
-
     }
-
 
     @Override
     public int getCount() {
@@ -49,6 +47,7 @@ public class CustomAdapter extends BaseAdapter {
         ((TextView) v.findViewById(R.id.tvTime)).setText(sbTemp.getStartTime());
         ((TextView) v.findViewById(R.id.tvSubject)).setText(sbTemp.getSubject());
 
+        System.out.println(position);
         return v;
     }
 }
