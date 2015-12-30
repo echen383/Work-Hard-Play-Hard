@@ -16,6 +16,10 @@ public class CustomAdapter extends BaseAdapter {
 
     Activity context;
     List<StudyBuddy> studyBuddies;
+    private TextView tvName;
+    private TextView tvLocation;
+    private TextView tvTime;
+    private TextView tvSubject;
 
     public CustomAdapter(Activity context, List<StudyBuddy> studyBuddies) {
         this.context = context;
@@ -40,8 +44,10 @@ public class CustomAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, final View convertView,
                         final ViewGroup parent){
+
         StudyBuddy sbTemp = studyBuddies.get(position);
         final View v = this.context.getLayoutInflater().inflate(R.layout.study_feed_list_item,null);
+
         ((TextView) v.findViewById(R.id.tvName)).setText(sbTemp.getName());
         ((TextView) v.findViewById(R.id.tvLocation)).setText(sbTemp.getLocation());
         ((TextView) v.findViewById(R.id.tvTime)).setText(sbTemp.getStartTime());

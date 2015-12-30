@@ -1,15 +1,19 @@
 package com.example.emily.whph2;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView WHPH;
+    private TextView PYP;
     private ImageButton btnInfo;
     private ImageButton btnPencil;
     private ImageButton btnCup;
@@ -19,6 +23,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //set font to caviar
+        WHPH = (TextView) findViewById(R.id.tvWHPH);
+        PYP = (TextView) findViewById(R.id.tvPYP);
+        Typeface caviar = Typeface.createFromAsset(getAssets(),"fonts/Caviar_Dreams_Bold.ttf");
+        WHPH.setTypeface(caviar);
+        PYP.setTypeface(caviar);
+
+        //link info button to info screen
         btnInfo = (ImageButton) findViewById(R.id.infobtn);
         btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //link pencil/cup buttons to work/play feeds
         btnPencil = (ImageButton) findViewById(R.id.btnPencil);
         btnCup = (ImageButton) findViewById(R.id.btnCup);
 

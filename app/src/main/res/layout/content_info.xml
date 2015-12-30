@@ -20,11 +20,11 @@
         android:keepScreenOn="true"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:textSize="30sp"
+        android:textSize="30dp"
         android:gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:text="THANKS SO MUCH FOR USING WORK HARD, PLAY HARD!"
-        android:padding="40dp"/>
+        android:padding="35dp"/>
 
     <TextView
         android:id="@+id/tvContact"
@@ -56,7 +56,7 @@
         android:textColor="@color/white"
         android:text="Zhaozhao . Emchen . Shivi D . Ashley . Sonia"
         android:gravity="center_horizontal"
-        android:textSize="16dp"
+        android:textSize="15dp"
         android:paddingTop="50dp"/>
 
 

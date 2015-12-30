@@ -21,13 +21,13 @@ public class StudyFeedActivity extends AppCompatActivity {
     private ImageButton btnCreateEvent;
     private ListView listView;
     private ArrayList<StudyBuddy> sbObjList;
-    private StudyBuddy studyBuddy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_feed);
 
+        //home button returns to main screen
         btnHome = (ImageButton) findViewById(R.id.btnHome);
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +37,7 @@ public class StudyFeedActivity extends AppCompatActivity {
             }
         });
 
+        //create event button allows user to create a new studying event
         btnCreateEvent = (ImageButton) findViewById(R.id.newpostbtn);
         btnCreateEvent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,10 +47,9 @@ public class StudyFeedActivity extends AppCompatActivity {
             }
         });
 
-
         Firebase.setAndroidContext(this);
-
         firebase = new Firebase("https://sizzling-torch-3755.firebaseio.com/");
+
         listView = (ListView) findViewById(R.id.listView);
         sbObjList = new ArrayList<StudyBuddy>();
 

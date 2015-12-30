@@ -9,21 +9,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvName"
-        android:textSize="20dp"/>
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="18dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvLocation"
-        android:textSize="20dp"/>
+        android:textColor="@color/grey"
+        android:textSize="15dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvTime"
-        android:textSize="20dp"/>
+        android:textSize="15dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvSubject"
-        android:textSize="20dp"/>
+        android:textSize="15dp"/>
 
 </LinearLayout>

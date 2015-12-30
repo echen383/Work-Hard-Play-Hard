@@ -1,6 +1,7 @@
 package com.example.emily.whph2;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -29,20 +30,23 @@ public class NewStudyBuddyActivity extends AppCompatActivity {
         Firebase.setAndroidContext(this);
         firebase = new Firebase("https://sizzling-torch-3755.firebaseio.com/");
 
-        //Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Helvetica.dfont");
+        //set font to caviar
+        Typeface caviar = Typeface.createFromAsset(getAssets(),"fonts/Caviar_Dreams_Bold.ttf");
         TextView titleText = (TextView) findViewById(R.id.tvPrompt);
-        //titleText.setTypeface(myTypeface);
+        titleText.setTypeface(caviar);
         nameText = (EditText) findViewById(R.id.etName);
-        //nameText.setTypeface(myTypeface);
+        nameText.setTypeface(caviar);
         locText = (EditText) findViewById(R.id.etLocation);
-        //locText.setTypeface(myTypeface);
+        locText.setTypeface(caviar);
         timeText = (EditText) findViewById(R.id.etTime);
-        //timeText.setTypeface(myTypeface);
+        timeText.setTypeface(caviar);
         subText = (EditText) findViewById(R.id.etSubject);
-        //subText.setTypeface(myTypeface);
+        subText.setTypeface(caviar);
         TextView enterText = (TextView) findViewById(R.id.btnSubmit);
-        //enterText.setTypeface(myTypeface);
+        enterText.setTypeface(caviar);
 
+        //upon clicking submit, create new study buddy, add study buddy to firebase and
+        //return to study feed screen
         Button submit = (Button) findViewById(R.id.btnSubmit);
         submit.setOnClickListener(new View.OnClickListener() {
 
@@ -50,16 +54,10 @@ public class NewStudyBuddyActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 studyBuddy = new StudyBuddy("", "", "", "");
-
                 studyBuddy.setName(nameText.getText().toString());
                 studyBuddy.setLocation(locText.getText().toString());
                 studyBuddy.setStartTime(timeText.getText().toString());
                 studyBuddy.setSubject(subText.getText().toString());
-
-                System.out.println(studyBuddy.getName());
-                System.out.println(studyBuddy.getLocation());
-                System.out.println(studyBuddy.getStartTime());
-                System.out.println(studyBuddy.getSubject());
 
                 firebase.push().setValue(studyBuddy);
 
