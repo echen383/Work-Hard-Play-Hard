@@ -3,6 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_study_feed">StudyFeedActivity</string>
     <string name="title_activity_new_study_buddy">NewStudyBuddyActivity</string>
+    <string name="title_activity_info">InfoActivity</string>
     <!--<string name="large_text">-->
     <!--"Material is the metaphor.\n\n"-->
 

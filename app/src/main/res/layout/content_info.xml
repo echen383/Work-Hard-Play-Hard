@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.emily.whph2.InfoActivity"
+    tools:showIn="@layout/activity_info"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/tvThanks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:keepScreenOn="true"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:text="THANKS SO MUCH FOR USING WORK HARD, PLAY HARD!"
+        android:padding="40dp"/>
+
+    <TextView
+        android:id="@+id/tvContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Contact us with any questions, comments, or concerns"
+        android:layout_below="@+id/tvThanks"
+        android:gravity="center_horizontal"
+        android:textSize="20dp"
+        android:paddingBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/tvAloke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Special thanks to Aloke!"
+        android:layout_below="@+id/tvContact"
+        android:gravity="center_horizontal"
+        android:textSize="20dp"
+        android:paddingRight="10dp"/>
+
+    <TextView
+        android:id="@+id/tvUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAloke"
+        android:textColor="@color/white"
+        android:text="Zhaozhao . Emchen . Shivi D . Ashley . Sonia"
+        android:gravity="center_horizontal"
+        android:textSize="16dp"
+        android:paddingTop="50dp"/>
+
+
+</RelativeLayout>

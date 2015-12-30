@@ -9,65 +9,66 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#2196F3"
+    android:background="@color/background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.emily.whph2.NewStudyBuddyActivity"
     tools:showIn="@layout/activity_new_study_buddy">
 
     <TextView
-        android:id="@+id/txtPrompt"
+        android:id="@+id/tvPrompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginTop="65dp"
         android:text="Fill out the following to find a study buddy near you!"
         android:textSize="19dp"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:id="@+id/nametxt"
+        android:id="@+id/etName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Name"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:textSize="19dp"
-        android:layout_below="@+id/txtPrompt"
+        android:layout_below="@+id/tvPrompt"
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/loctxt"
+        android:id="@+id/etLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Location"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:textSize="19dp"
-        android:layout_below="@+id/nametxt"
+        android:layout_below="@+id/etName"
         android:layout_alignParentStart="true"
         android:layout_marginTop="44dp" />
 
     <EditText
-        android:id="@+id/timetxt"
+        android:id="@+id/etTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Time"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:textSize="19dp"
-        android:layout_below="@+id/loctxt"
+        android:layout_below="@+id/etLocation"
         android:layout_marginTop="44dp"
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/subjectxt"
+        android:id="@+id/etSubject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Subject"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:textSize="19dp"
-        android:layout_below="@+id/timetxt"
+        android:layout_below="@+id/etTime"
         android:layout_alignParentStart="true"
         android:layout_marginTop="44dp" />
 
@@ -76,9 +77,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:textColor="#FFFFFF"
-        android:background="#90CAF9"
-        android:layout_below="@+id/subjectxt"
+        android:textColor="@color/white"
+        android:background="@color/lightBlue"
+        android:layout_below="@+id/etSubject"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

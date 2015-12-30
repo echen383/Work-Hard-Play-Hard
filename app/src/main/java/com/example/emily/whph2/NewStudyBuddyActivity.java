@@ -30,15 +30,15 @@ public class NewStudyBuddyActivity extends AppCompatActivity {
         firebase = new Firebase("https://sizzling-torch-3755.firebaseio.com/");
 
         //Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Helvetica.dfont");
-        TextView titleText = (TextView) findViewById(R.id.txtPrompt);
+        TextView titleText = (TextView) findViewById(R.id.tvPrompt);
         //titleText.setTypeface(myTypeface);
-        nameText = (EditText) findViewById(R.id.nametxt);
+        nameText = (EditText) findViewById(R.id.etName);
         //nameText.setTypeface(myTypeface);
-        locText = (EditText) findViewById(R.id.loctxt);
+        locText = (EditText) findViewById(R.id.etLocation);
         //locText.setTypeface(myTypeface);
-        timeText = (EditText) findViewById(R.id.timetxt);
+        timeText = (EditText) findViewById(R.id.etTime);
         //timeText.setTypeface(myTypeface);
-        subText = (EditText) findViewById(R.id.subjectxt);
+        subText = (EditText) findViewById(R.id.etSubject);
         //subText.setTypeface(myTypeface);
         TextView enterText = (TextView) findViewById(R.id.btnSubmit);
         //enterText.setTypeface(myTypeface);
@@ -67,21 +67,6 @@ public class NewStudyBuddyActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
-
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
 
     }
 

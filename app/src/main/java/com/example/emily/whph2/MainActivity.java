@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ImageButton btnInfo;
     private ImageButton btnPencil;
     private ImageButton btnCup;
 
@@ -17,6 +18,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        btnInfo = (ImageButton) findViewById(R.id.infobtn);
+        btnInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, InfoActivity.class);
+                startActivity(i);
+            }
+        });
 
         btnPencil = (ImageButton) findViewById(R.id.btnPencil);
         btnCup = (ImageButton) findViewById(R.id.btnCup);
@@ -29,18 +39,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
     }
 
     @Override

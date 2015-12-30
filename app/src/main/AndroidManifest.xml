@@ -27,6 +27,10 @@
         <activity
             android:name=".NewStudyBuddyActivity"
             android:label="@string/title_activity_new_study_buddy"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".InfoActivity"
+            android:label="@string/title_activity_info"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

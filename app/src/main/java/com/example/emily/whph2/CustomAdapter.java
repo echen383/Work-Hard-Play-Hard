@@ -47,7 +47,6 @@ public class CustomAdapter extends BaseAdapter {
         ((TextView) v.findViewById(R.id.tvTime)).setText(sbTemp.getStartTime());
         ((TextView) v.findViewById(R.id.tvSubject)).setText(sbTemp.getSubject());
 
-        System.out.println(position);
         return v;
     }
 }
