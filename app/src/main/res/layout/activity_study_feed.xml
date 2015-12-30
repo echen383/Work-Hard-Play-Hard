@@ -43,7 +43,6 @@
                 android:checked="true"
                 android:layout_below="@+id/workbtn"
                 android:layout_centerHorizontal="true" />
-            
 
             <ImageButton
                 android:id="@+id/newpostbtn"
@@ -54,6 +53,16 @@
                 android:layout_alignBottom="@+id/feedbtn"
                 android:layout_alignEnd="@+id/playbtn"
                 android:src="@android:drawable/ic_menu_edit" />
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/btnHome"
+                android:src="@drawable/ic_home"
+                android:background="@null"
+                android:layout_alignBottom="@+id/feedbtn"
+                android:layout_alignTop="@+id/feedbtn"
+                android:layout_marginLeft="40dp"/>
 
         </RelativeLayout>
 

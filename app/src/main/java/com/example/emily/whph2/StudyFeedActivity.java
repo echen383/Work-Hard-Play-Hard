@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class StudyFeedActivity extends AppCompatActivity {
 
+    private ImageButton btnHome;
     private Firebase firebase;
     private ImageButton btnCreateEvent;
     private ListView listView;
@@ -27,10 +28,28 @@ public class StudyFeedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_feed);
 
+        btnHome = (ImageButton) findViewById(R.id.btnHome);
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(StudyFeedActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+
+        btnCreateEvent = (ImageButton) findViewById(R.id.newpostbtn);
+        btnCreateEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(StudyFeedActivity.this, NewStudyBuddyActivity.class);
+                startActivity(i);
+            }
+        });
+
+
         Firebase.setAndroidContext(this);
 
         firebase = new Firebase("https://sizzling-torch-3755.firebaseio.com/");
-        btnCreateEvent = (ImageButton) findViewById(R.id.newpostbtn);
         listView = (ListView) findViewById(R.id.listView);
         sbObjList = new ArrayList<StudyBuddy>();
 
@@ -41,14 +60,6 @@ public class StudyFeedActivity extends AppCompatActivity {
         listView.setAdapter(myAdapter);
 
         sbObjList.remove(0);
-
-        btnCreateEvent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(StudyFeedActivity.this, NewStudyBuddyActivity.class);
-                startActivity(i);
-            }
-        });
 
         firebase.addChildEventListener(new ChildEventListener() {
             @Override
@@ -80,20 +91,6 @@ public class StudyFeedActivity extends AppCompatActivity {
                 System.out.println("Error: " + firebaseError.getMessage());
             }
         });
-
-
-
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
     }
 
