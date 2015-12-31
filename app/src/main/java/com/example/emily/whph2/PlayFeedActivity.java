@@ -15,26 +15,26 @@ import com.firebase.client.FirebaseError;
 
 import java.util.ArrayList;
 
-public class StudyFeedActivity extends AppCompatActivity {
+public class PlayFeedActivity extends AppCompatActivity {
 
-    private Button toPlayBtn;
+    private Button workbtn;
     private ImageButton btnHome;
     private Firebase firebase;
     private ImageButton btnCreateEvent;
     private ListView listView;
-    private ArrayList<StudyBuddy> sbObjList;
+    private ArrayList<PlayBuddy> pbObjList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_study_feed);
+        setContentView(R.layout.activity_play_feed);
 
         //home button returns to main screen
         btnHome = (ImageButton) findViewById(R.id.btnHome);
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(StudyFeedActivity.this, MainActivity.class);
+                Intent i = new Intent(PlayFeedActivity.this, MainActivity.class);
                 startActivity(i);
             }
         });
@@ -44,41 +44,42 @@ public class StudyFeedActivity extends AppCompatActivity {
         btnCreateEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(StudyFeedActivity.this, NewStudyBuddyActivity.class);
+                Intent i = new Intent(PlayFeedActivity.this, NewPlayBuddyActivity.class);
                 startActivity(i);
             }
         });
 
-        //play button links to play feed
-        toPlayBtn = (Button) findViewById(R.id.playbtn);
-        toPlayBtn.setOnClickListener(new View.OnClickListener() {
+        //work button links to study feed
+        workbtn = (Button) findViewById(R.id.workbtn);
+        workbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(StudyFeedActivity.this, PlayFeedActivity.class);
+                Intent i = new Intent(PlayFeedActivity.this, StudyFeedActivity.class);
                 startActivity(i);
             }
         });
 
+
         Firebase.setAndroidContext(this);
-        firebase = new Firebase("https://sizzling-torch-3755.firebaseio.com/");
+        firebase = new Firebase("https://playfeed.firebaseio.com/");
 
         listView = (ListView) findViewById(R.id.listView);
-        sbObjList = new ArrayList<StudyBuddy>();
+        pbObjList = new ArrayList<PlayBuddy>();
 
-        StudyBuddy dummy = new StudyBuddy("","","","");
-        sbObjList.add(dummy);
+        PlayBuddy dummy = new PlayBuddy("","","","");
+        pbObjList.add(dummy);
 
-        final CustomAdapter myAdapter = new CustomAdapter(this, sbObjList);
+        final CustomAdapterPlay myAdapter = new CustomAdapterPlay(this, pbObjList);
         listView.setAdapter(myAdapter);
 
-        sbObjList.remove(0);
+        pbObjList.remove(0);
 
         firebase.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 if (dataSnapshot.exists()) {
-                    StudyBuddy sb = dataSnapshot.getValue(StudyBuddy.class);
-                    sbObjList.add(sb);
+                    PlayBuddy pb = dataSnapshot.getValue(PlayBuddy.class);
+                    pbObjList.add(pb);
                     myAdapter.notifyDataSetChanged();
                 }
             }
@@ -106,8 +107,8 @@ public class StudyFeedActivity extends AppCompatActivity {
 
     }
 
-    public ArrayList<StudyBuddy> getSBObjList() {
-        return sbObjList;
+    public ArrayList<PlayBuddy> getPBObjList() {
+        return pbObjList;
     }
 
 }

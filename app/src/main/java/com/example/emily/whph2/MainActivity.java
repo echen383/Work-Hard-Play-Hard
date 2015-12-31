@@ -43,11 +43,17 @@ public class MainActivity extends AppCompatActivity {
         //link pencil/cup buttons to work/play feeds
         btnPencil = (ImageButton) findViewById(R.id.btnPencil);
         btnCup = (ImageButton) findViewById(R.id.btnCup);
-
         btnPencil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, StudyFeedActivity.class);
+                startActivity(i);
+            }
+        });
+        btnCup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, PlayFeedActivity.class);
                 startActivity(i);
             }
         });

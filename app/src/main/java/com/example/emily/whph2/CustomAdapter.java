@@ -16,10 +16,6 @@ public class CustomAdapter extends BaseAdapter {
 
     Activity context;
     List<StudyBuddy> studyBuddies;
-    private TextView tvName;
-    private TextView tvLocation;
-    private TextView tvTime;
-    private TextView tvSubject;
 
     public CustomAdapter(Activity context, List<StudyBuddy> studyBuddies) {
         this.context = context;
